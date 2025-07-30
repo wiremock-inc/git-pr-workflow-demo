@@ -14,7 +14,7 @@ mappings:
         "tasks": [
           {
             "id": 12345,
-            "title": "chore: refactor task manager",
+            "title": "Chore: refactor task manager",
             "description": "Factor out the repeated workflow elements to reduce duplication"
             "labelIds": [53, 67]
           }
