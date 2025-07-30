@@ -1,0 +1,36 @@
+name: Deploy to WireMock Cloud
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+      
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '18'
+        
+    - name: Install WireMock CLI
+      run: npm install -g @wiremock/cli
+        
+    - name: Create WireMock config directory
+      run: mkdir -p ~/.config/wiremock-cli
+      
+    - name: Create WireMock config file
+      run: |
+        cat > ~/.config/wiremock-cli/config.yaml << 'EOF'
+        wiremock:
+          cloud: {user: {id: 'm7m1g', email: '${{ vars.WIREMOCK_EMAIL }}', token: '${{ secrets.WIREMOCK_TOKEN }}'}}
+        EOF
+        
+    - name: Push mock API to WireMock Cloud
+      run: wiremock push mock-api git-pr-workflow-demo --to 8vo14
