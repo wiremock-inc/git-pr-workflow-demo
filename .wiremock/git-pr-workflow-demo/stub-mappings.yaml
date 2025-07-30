@@ -1,0 +1,43 @@
+---
+mappings:
+- id: "12e4ca84-f8e7-4c0b-afcd-d5431a5f33a3"
+  name: "List tasks in project"
+  request:
+    urlPathTemplate: "/projects/{projectId}/tasks"
+    method: "GET"
+    pathParameters: {}
+    formParameters: {}
+  response:
+    status: 200
+    body: |
+      {
+        "tasks": [
+          {
+            "id": 12345,
+            "title": "chore: refactor task manager",
+            "description": "Factor out the repeated workflow elements to reduce duplication"
+            "labelIds": [53, 67]
+          }
+        ]
+      }
+    headers:
+      Content-Type: "application/json"
+  uuid: "12e4ca84-f8e7-4c0b-afcd-d5431a5f33a3"
+  persistent: true
+  priority: 5
+  metadata:
+    mocklab:
+      created:
+        at: "2025-07-30T20:23:23.541177537Z"
+        via: "ADMIN_API"
+        by: "m7m1g"
+      response-example-attachment: "List tasks in project"
+  insertionIndex: 0
+  postServeActions: []
+  serveEventListeners: []
+meta:
+  start: 1
+  end: 1
+  total: 1
+  page: 1
+  totalPages: 1

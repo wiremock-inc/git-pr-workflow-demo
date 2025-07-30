@@ -1,0 +1,7 @@
+services:
+  git-pr-workflow-demo:
+    type: 'REST'
+    name: 'Git PR workflow demo'
+    cloud_id: '8vo14'
+    path: './git-pr-workflow-demo'
+    port: 8080
