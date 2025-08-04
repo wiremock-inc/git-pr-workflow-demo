@@ -1,7 +1,7 @@
 ---
 mappings:
 - id: "12e4ca84-f8e7-4c0b-afcd-d5431a5f33a3"
-  name: "List tasks in project"
+  name: "Get projects by projectId tasks. - List tasks in project"
   request:
     urlPathTemplate: "/projects/{projectId}/tasks"
     method: "GET"
@@ -22,15 +22,23 @@ mappings:
       }
     headers:
       Content-Type: "application/json"
+    transformerParameters:
+      graphQlMockDataTransformerParameters: {}
   uuid: "12e4ca84-f8e7-4c0b-afcd-d5431a5f33a3"
   persistent: true
   priority: 5
   metadata:
     mocklab:
       created:
-        at: "2025-07-30T20:23:23.541177537Z"
+        at: "2025-08-04T13:40:27.10561892Z"
+        via: "IMPORT"
+        by: "m7m1g"
+      updated:
+        at: "2025-08-04T13:40:48.632130884Z"
         via: "ADMIN_API"
         by: "m7m1g"
+      oas:
+        operationId: "getProjectsByProjectIdTasks"
       response-example-attachment: "List tasks in project"
   insertionIndex: 0
   postServeActions: []
