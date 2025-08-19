@@ -27,7 +27,7 @@ jobs:
       run: |
         cat > ~/.config/wiremock-cli/config.yaml << 'EOF'
         wiremock:
-          cloud: {user: {id: 'm7m1g', email: '${{ vars.WIREMOCK_EMAIL }}', token: '${{ secrets.WIREMOCK_TOKEN }}'}}
+          cloud: {user: {id: 'm7m1g', email: '${{ secrets.WIREMOCK_EMAIL }}', token: '${{ secrets.WIREMOCK_TOKEN }}'}}
         EOF
         
     - name: Push mock API to WireMock Cloud
