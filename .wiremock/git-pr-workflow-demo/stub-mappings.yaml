@@ -14,7 +14,7 @@ mappings:
         "tasks": [
           {
             "id": 12345,
-            "title": "Chore: refactor task manager",
+            "title": "Chore: refactor the task manager component",
             "description": "Factor out the repeated workflow elements to reduce duplication"
             "labelIds": [53, 67]
           }
@@ -30,16 +30,16 @@ mappings:
   metadata:
     mocklab:
       created:
-        at: "2025-08-04T13:40:27.10561892Z"
-        via: "IMPORT"
-        by: "m7m1g"
+        at: "2025-08-16T06:34:58.35050062Z"
+        via: "SYSTEM"
       updated:
-        at: "2025-08-04T13:40:48.632130884Z"
+        at: "2025-08-19T11:17:26.097846862Z"
         via: "ADMIN_API"
         by: "m7m1g"
       oas:
         operationId: "getProjectsByProjectIdTasks"
-      response-example-attachment: "List tasks in project"
+      response-example-attachment: "Get projects by projectId tasks. - List tasks\
+        \ in project"
   insertionIndex: 0
   postServeActions: []
   serveEventListeners: []
