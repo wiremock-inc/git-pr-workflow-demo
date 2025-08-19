@@ -3,21 +3,25 @@ info:
   title: Git PR workflow demo
   version: 1.0.0
 servers:
+- url: https://8vkjq.wiremockapi.cloud
 - url: https://git-pr-workflow-demo.wiremockapi.cloud
 paths:
   /projects/{projectId}/tasks:
     get:
       summary: Get projects by projectId tasks.
+      description: Get projects by projectId tasks.
       operationId: getProjectsByProjectIdTasks
       parameters:
       - name: projectId
         in: path
         required: true
+        style: simple
+        explode: false
         schema:
           type: string
       responses:
         "200":
-          description: List tasks in project
+          description: Get projects by projectId tasks. - List tasks in project
           content:
             application/json:
               examples:
@@ -27,7 +31,19 @@ paths:
                       "tasks": [
                         {
                           "id": 12345,
-                          "title": "chore: refactor task manager",
+                          "title": "Chore: refactor task manager",
+                          "description": "Factor out the repeated workflow elements to reduce duplication"
+                          "labelIds": [53, 67]
+                        }
+                      ]
+                    }
+                Get projects by projectId tasks. - List tasks in project:
+                  value: |
+                    {
+                      "tasks": [
+                        {
+                          "id": 12345,
+                          "title": "Chore: refactor the task manager component",
                           "description": "Factor out the repeated workflow elements to reduce duplication"
                           "labelIds": [53, 67]
                         }
