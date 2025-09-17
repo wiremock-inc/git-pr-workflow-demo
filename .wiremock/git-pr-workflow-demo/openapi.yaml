@@ -1,10 +1,10 @@
 openapi: 3.0.1
 info:
   title: Git PR workflow demo
+  description: My test API
   version: 1.0.0
 servers:
-- url: https://8vkjq.wiremockapi.cloud
-- url: https://git-pr-workflow-demo.wiremockapi.cloud
+- url: https://1mlq9.wiremockapi.cloud
 paths:
   /projects/{projectId}/tasks:
     get:
@@ -21,7 +21,7 @@ paths:
           type: string
       responses:
         "200":
-          description: Get projects by projectId tasks. - List tasks in project
+          description: 'Get projects by projectId tasks. - List tasks in project'
           content:
             application/json:
               examples:
@@ -43,7 +43,7 @@ paths:
                       "tasks": [
                         {
                           "id": 12345,
-                          "title": "Chore: refactor the task manager component",
+                          "title": "Chore: refactor the task manager module",
                           "description": "Factor out the repeated workflow elements to reduce duplication"
                           "labelIds": [53, 67]
                         }

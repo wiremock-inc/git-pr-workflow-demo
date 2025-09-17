@@ -1,12 +1,13 @@
 ---
 mappings:
-- id: "12e4ca84-f8e7-4c0b-afcd-d5431a5f33a3"
+- id: "6853df9d-80b5-40ad-bb5a-71e3be375986"
   name: "Get projects by projectId tasks. - List tasks in project"
   request:
     urlPathTemplate: "/projects/{projectId}/tasks"
     method: "GET"
-    pathParameters: {}
-    formParameters: {}
+    pathParameters:
+      projectId:
+        equalTo: "slpo"
   response:
     status: 200
     body: |
@@ -14,7 +15,7 @@ mappings:
         "tasks": [
           {
             "id": 12345,
-            "title": "Chore: refactor the task manager component",
+            "title": "Chore: refactor task manager",
             "description": "Factor out the repeated workflow elements to reduce duplication"
             "labelIds": [53, 67]
           }
@@ -22,8 +23,41 @@ mappings:
       }
     headers:
       Content-Type: "application/json"
-    transformerParameters:
-      graphQlMockDataTransformerParameters: {}
+  uuid: "6853df9d-80b5-40ad-bb5a-71e3be375986"
+  persistent: true
+  priority: 5
+  metadata:
+    mocklab:
+      created:
+        at: "2025-09-17T15:29:02.787415763Z"
+        via: "OAS3_IMPORT"
+        by: "m7m1g"
+      oas:
+        operationId: "getProjectsByProjectIdTasks"
+      response-example-attachment: "Get projects by projectId tasks. - List tasks\
+        \ in project"
+  insertionIndex: 0
+- id: "12e4ca84-f8e7-4c0b-afcd-d5431a5f33a3"
+  name: "Get projects by projectId tasks. - Get projects by projectId tasks. - List\
+    \ tasks in project"
+  request:
+    urlPathTemplate: "/projects/{projectId}/tasks"
+    method: "GET"
+  response:
+    status: 200
+    body: |
+      {
+        "tasks": [
+          {
+            "id": 12345,
+            "title": "Chore: refactor the task manager module",
+            "description": "Factor out the repeated workflow elements to reduce duplication"
+            "labelIds": [53, 67]
+          }
+        ]
+      }
+    headers:
+      Content-Type: "application/json"
   uuid: "12e4ca84-f8e7-4c0b-afcd-d5431a5f33a3"
   persistent: true
   priority: 5
@@ -33,8 +67,8 @@ mappings:
         at: "2025-08-16T06:34:58.35050062Z"
         via: "SYSTEM"
       updated:
-        at: "2025-08-19T11:17:26.097846862Z"
-        via: "ADMIN_API"
+        at: "2025-09-17T15:29:02.788891244Z"
+        via: "OAS3_IMPORT"
         by: "m7m1g"
       oas:
         operationId: "getProjectsByProjectIdTasks"
@@ -45,7 +79,7 @@ mappings:
   serveEventListeners: []
 meta:
   start: 1
-  end: 1
-  total: 1
+  end: 2
+  total: 2
   page: 1
   totalPages: 1
