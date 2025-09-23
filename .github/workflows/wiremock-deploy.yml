@@ -20,15 +20,8 @@ jobs:
     - name: Install WireMock CLI
       run: npm install -g @wiremock/cli
         
-    - name: Create WireMock config directory
-      run: mkdir -p ~/.config/wiremock-cli
-      
-    - name: Create WireMock config file
-      run: |
-        cat > ~/.config/wiremock-cli/config.yaml << 'EOF'
-        wiremock:
-          cloud: {user: {id: 'm7m1g', email: '${{ secrets.WIREMOCK_EMAIL }}', token: '${{ secrets.WIREMOCK_TOKEN }}'}}
-        EOF
+    - name: Set the API token
+      run: wiremock config set api_token ${{ secrets.WIREMOCK_TOKEN }}
         
     - name: Push mock API to WireMock Cloud
       run: wiremock push mock-api git-pr-workflow-demo --to 8vo14
